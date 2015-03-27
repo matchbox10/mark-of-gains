@@ -1,0 +1,5 @@
+name = gainz
+description = Create and track your personal workout routine
+core = 7.x
+package = Workout
+dependencies[] = views
