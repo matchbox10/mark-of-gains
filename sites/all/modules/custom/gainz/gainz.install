@@ -1,0 +1,53 @@
+<?php
+
+ $schema['gainz_workout_log'] = array(
+    'description' => t('Work outs.'),
+    'fields' => array(
+      'gwid' => array(
+        'description' => t('The primary identifier for a Gain Set.'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      'sid' => array(
+        'description' => t('Node ID of the My Workout Set this Applies to'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+      'uid' => array(
+        'description' => t('User ID of set being created.'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+      'date' => array(
+        'description' => t('The {node_type} of this node.'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+      'weight' => array(
+        'description' => t('Weight being lifted.'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+      ),
+      'reps' => array(
+        'description' => t('How Many Reps performed'),
+        'type' => 'int',
+        'not null' => FALSE
+          ),
+      ),
+      'type' => array(
+        'description' => t('Type of set being performed'),
+        'type' => 'varchar',
+        'length' => 10
+          ),
+      ),
+    'indexes' => array(
+      'uid' => array('uid'),
+      'sid' => array('sid'),
+      ),
+    'primary key' => array('gwid'),
+    );

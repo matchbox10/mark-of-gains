@@ -3,3 +3,4 @@ description = Create and track your personal workout routine
 core = 7.x
 package = Workout
 dependencies[] = views
+version = 7.x-1.0 
