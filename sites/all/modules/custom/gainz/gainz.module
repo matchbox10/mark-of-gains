@@ -2,7 +2,7 @@
 
  module_load_include('inc', 'gainz', 'includes/forms');
 
-function gainz_form_my_workout_set_node_form_alter(&$form, &$form_state, $form_id) {
+function gainz_form_my_workout_log_node_form_alter(&$form, &$form_state, $form_id) {
     dsm($form);
     if(isset($_GET['workout']))
     {
@@ -13,10 +13,10 @@ function gainz_form_my_workout_set_node_form_alter(&$form, &$form_state, $form_i
 }
 
 function gainz_menu() {
-     $items['workouts/start/%/%/begin'] = array(
+     $items['workouts/start/%/%/begin/%'] = array(
     'title' => 'Doing My Workout',
     'page callback' => '_gainz_begin_workout',
-    'page arguments' => array(2,3),
+    'page arguments' => array(2,5),
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
@@ -28,6 +28,12 @@ function _gainz_begin_workout($user, $workoutSet) {
     
     $someStuff = drupal_render(drupal_get_form('gainz_set_form'));
     
+    $poo = entity_load('node',array($workoutSet));
+    
+    $poo = node_load($workoutSet);
+    
+    dsm($poo);
+
     return $someStuff;
     
 }
