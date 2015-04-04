@@ -14,6 +14,7 @@ function gainz_menu() {
      $items['workouts/start/%/%/begin'] = array(
     'title' => 'Doing My Workout',
     'page callback' => '_gainz_begin_workout',
+    'page arguments' => array(2,3),
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
