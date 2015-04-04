@@ -10,3 +10,21 @@ function gainz_form_my_workout_set_node_form_alter(&$form, &$form_state, $form_i
     //$form['field_my_nid']['#access'] = 0;
 }
 
+function gainz_menu() {
+     $items['workouts/start/%/%/begin'] = array(
+    'title' => 'Doing My Workout',
+    'page callback' => '_gainz_begin_workout',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+function _gainz_begin_workout($user, $workoutSet) {
+    
+    $someStuff = 'Begin Workout for: ' . $workoutSet;
+    
+    return $someStuff;
+    
+}
