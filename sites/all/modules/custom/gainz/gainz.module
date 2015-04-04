@@ -1,5 +1,7 @@
 <?php
 
+ module_load_include('inc', 'gainz', 'includes/forms');
+
 function gainz_form_my_workout_set_node_form_alter(&$form, &$form_state, $form_id) {
     dsm($form);
     if(isset($_GET['workout']))
@@ -25,6 +27,8 @@ function gainz_menu() {
 function _gainz_begin_workout($user, $workoutSet) {
     
     $someStuff = 'Begin Workout for: ' . $workoutSet;
+    
+    $someStuff .= drupal_get_form('gainz_set_form');
     
     return $someStuff;
     
