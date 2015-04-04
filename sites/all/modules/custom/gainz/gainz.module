@@ -1,1 +1,12 @@
 <?php
+
+function gainz_form_my_workout_set_node_form_alter(&$form, &$form_state, $form_id) {
+    dsm($form);
+    if(isset($_GET['workout']))
+    {
+        $form['field_my_nid']['und'][0]['value']['#default_value'] = $_GET['workout'];
+        
+    }
+    $form['field_my_nid']['#access'] = 0;
+}
+
