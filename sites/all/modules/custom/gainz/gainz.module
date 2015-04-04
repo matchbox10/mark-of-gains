@@ -26,9 +26,7 @@ function gainz_menu() {
 
 function _gainz_begin_workout($user, $workoutSet) {
     
-    $someStuff = 'Begin Workout for: ' . $workoutSet;
-    
-    $someStuff .= drupal_get_form('gainz_set_form');
+    $someStuff = drupal_render(drupal_get_form('gainz_set_form'));
     
     return $someStuff;
     
